@@ -2,7 +2,7 @@
 
 namespace Retailcrm\Retailcrm\Model\Service;
 
-use \Retailcrm\Retailcrm\Helper\Data as Helper;
+use Retailcrm\Retailcrm\Helper\Data as Helper;
 
 class Order implements \Retailcrm\Retailcrm\Api\OrderManagerInterface
 {
@@ -89,7 +89,7 @@ class Order implements \Retailcrm\Retailcrm\Api\OrderManagerInterface
             $preparedOrder['discountManualAmount'] = abs($order->getDiscountAmount());
             $payment = [
                 'type'=> $paymentList[$order->getPayment()->getMethodInstance()->getCode()],
-                'externalId' => $codeShop.$order->getId(),
+                'externalId' => $codeShop . $order->getId(),
                 'order' => [
                     'externalId' => $order->getId(),
                 ]

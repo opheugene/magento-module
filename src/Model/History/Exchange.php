@@ -241,7 +241,7 @@ class Exchange
 
         //add items in quote
         foreach ($ditems as $id =>$item) {
-            $product = $productRepository->getById($id,false, $store->getId(), false);
+            $product = $productRepository->getById($id, false, $store->getId(), false);
             $product->setPrice($item['initialPrice']);
             $quote->addProduct(
                 $product,
@@ -410,7 +410,7 @@ class Exchange
 
         //add items in quote
         foreach ($ditems as $id => $item) {
-            $product = $productRepository->getById($id,false, $store->getId(), false);
+            $product = $productRepository->getById($id, false, $store->getId(), false);
             $product->setPrice($item['initialPrice']);
             $quote->addProduct(
                 $product,
@@ -696,7 +696,7 @@ class Exchange
         foreach ($activeCarriers as $carrierCode => $carrierModel) {
             if ($carrierMethods = $carrierModel->getAllowedMethods()) {
                 foreach ($carrierMethods as $methodCode => $method) {
-                    $code = $carrierCode . '_'. $methodCode;
+                    $code = $carrierCode . '_' . $methodCode;
 
                     if ($mcode == $carrierCode) {
                         $methods[$mcode] = $code;

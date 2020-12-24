@@ -2,8 +2,8 @@
 
 namespace Retailcrm\Retailcrm\Model\Observer;
 
-use Retailcrm\Retailcrm\Helper\Proxy as ApiClient;
 use Retailcrm\Retailcrm\Helper\Data as Helper;
+use Retailcrm\Retailcrm\Helper\Proxy as ApiClient;
 
 class Customer implements \Magento\Framework\Event\ObserverInterface
 {

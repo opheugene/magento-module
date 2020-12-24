@@ -8,7 +8,7 @@ class InventoriesUpload
 {
     private $productRepo;
     private $api;
-    
+
     public function __construct(
         ProductRepositoryInterface $productRepo,
         \Retailcrm\Retailcrm\Helper\Proxy $api
@@ -29,7 +29,7 @@ class InventoriesUpload
         $page = 1;
 
         do {
-            $response = $this->api->storeInventories(array(), $page, 250);
+            $response = $this->api->storeInventories([], $page, 250);
 
             if ($response === false || !$response->isSuccessful()) {
                 return false;
@@ -37,12 +37,12 @@ class InventoriesUpload
 
             foreach ($response['offers'] as $offer) {
                 if (isset($offer['externalId'])) {
-                   $product = $this->productRepo->getById($offer['externalId']);
-                   $product->setStockData(
+                    $product = $this->productRepo->getById($offer['externalId']);
+                    $product->setStockData(
                         ['qty' => $offer['quantity'],
                         'is_in_stock' => $offer['quantity'] > 0]
                     );
-                   $product->save();
+                    $product->save();
                 }
             }
 

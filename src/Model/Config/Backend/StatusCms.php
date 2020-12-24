@@ -50,7 +50,7 @@ class StatusCms extends \Magento\Framework\View\Element\Html\Select
     public function _toHtml()
     {
         if (!$this->getOptions()) {
-            $statuses = array();
+            $statuses = [];
 
             try {
                 $statuses = $this->statusCollection->toOptionArray();
@@ -58,10 +58,10 @@ class StatusCms extends \Magento\Framework\View\Element\Html\Select
                 $this->logger->writeRow($exception->getMessage());
             }
 
-            $this->addOption( 'null',  "not selected");
+            $this->addOption('null', "not selected");
             if ($statuses) {
                 foreach ($statuses as $code => $status) {
-                    $this->addOption( $status['value'],  $status['label']);
+                    $this->addOption($status['value'], $status['label']);
                 }
             }
         }

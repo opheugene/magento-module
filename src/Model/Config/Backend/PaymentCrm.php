@@ -49,7 +49,7 @@ class PaymentCrm extends \Magento\Framework\View\Element\Html\Select
     public function _toHtml()
     {
         if (!$this->getOptions()) {
-            $paymentsTypes = array();
+            $paymentsTypes = [];
 
             try {
                 $response = $this->client->paymentTypesList();
@@ -61,13 +61,12 @@ class PaymentCrm extends \Magento\Framework\View\Element\Html\Select
                 $paymentsTypes = $response['paymentTypes'];
             }
 
-            $this->addOption( 'null',  "not selected");
+            $this->addOption('null', "not selected");
             if ($paymentsTypes) {
                 foreach ($paymentsTypes as $paymentsType) {
                     $this->addOption($paymentsType['code'], $paymentsType['name']);
                 }
             }
-
         }
 
         return parent::_toHtml();

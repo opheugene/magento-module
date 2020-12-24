@@ -90,7 +90,6 @@ class FieldsetTest extends TestCase
         $rendererMock = $this->createMock(\Magento\Framework\Data\Form\Element\Renderer\RendererInterface::class);
 
         if (class_exists(\Magento\Framework\View\Helper\SecureHtmlRenderer::class)) {
-
             $this->secureRenderer = $this->createMock(\Magento\Framework\View\Helper\SecureHtmlRenderer::class);
             $this->secureRenderer->method('renderEventListenerAsTag')
                 ->willReturnCallback(

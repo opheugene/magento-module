@@ -3,8 +3,8 @@
 namespace Retailcrm\Retailcrm\Model\Observer;
 
 use Magento\Framework\Event\Observer;
-use Retailcrm\Retailcrm\Helper\Proxy as ApiClient;
 use Retailcrm\Retailcrm\Helper\Data as Helper;
+use Retailcrm\Retailcrm\Helper\Proxy as ApiClient;
 
 class OrderCreate implements \Magento\Framework\Event\ObserverInterface
 {

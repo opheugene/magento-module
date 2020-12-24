@@ -50,7 +50,7 @@ class PaymentCms extends \Magento\Framework\View\Element\Html\Select
     public function _toHtml()
     {
         if (!$this->getOptions()) {
-            $paymentMethods = array();
+            $paymentMethods = [];
 
             try {
                 $paymentMethods = $this->paymentConfig->getActiveMethods();
@@ -58,7 +58,7 @@ class PaymentCms extends \Magento\Framework\View\Element\Html\Select
                 $this->logger->writeRow($exception->getMessage());
             }
 
-            $this->addOption( 'null',  "not selected");
+            $this->addOption('null', "not selected");
             if ($paymentMethods) {
                 foreach ($paymentMethods as $code => $payment) {
                     $this->addOption($payment->getCode(), $payment->getTitle());

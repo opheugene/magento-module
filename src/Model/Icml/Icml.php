@@ -59,7 +59,7 @@ class Icml
         $this->shop = $website;
 
         $string = '<?xml version="1.0" encoding="UTF-8"?>
-            <yml_catalog date="'.date('Y-m-d H:i:s').'">
+            <yml_catalog date="' . date('Y-m-d H:i:s') . '">
                 <shop>
                     <name>' . $website->getName() . '</name>
                     <categories/>

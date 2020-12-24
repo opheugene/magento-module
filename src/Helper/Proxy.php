@@ -2,9 +2,9 @@
 
 namespace Retailcrm\Retailcrm\Helper;
 
+use Retailcrm\Retailcrm\ApiClient\ApiClientFactory;
 use Retailcrm\Retailcrm\Model\Logger\Logger;
 use Retailcrm\Retailcrm\Model\Service\ConfigManager;
-use Retailcrm\Retailcrm\ApiClient\ApiClientFactory;
 
 class Proxy
 {

@@ -2,8 +2,8 @@
 
 namespace Retailcrm\Retailcrm\Model\Service;
 
-use Retailcrm\Retailcrm\Helper\Data as Helper;
 use Magento\Framework\App\Config\ScopeConfigInterface;
+use Retailcrm\Retailcrm\Helper\Data as Helper;
 
 class IntegrationModule
 {
@@ -111,7 +111,6 @@ class IntegrationModule
         }
 
         if ($response->isSuccessful() && $active == true) {
-
             $scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT;
             $scopeId = 0;
 

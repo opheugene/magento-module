@@ -50,7 +50,7 @@ class ShippingCms extends \Magento\Framework\View\Element\Html\Select
     public function _toHtml()
     {
         if (!$this->getOptions()) {
-            $deliveryMethods = array();
+            $deliveryMethods = [];
 
             try {
                 $deliveryMethods = $this->shippingConfig->getActiveCarriers();
@@ -58,13 +58,12 @@ class ShippingCms extends \Magento\Framework\View\Element\Html\Select
                 $this->logger->writeRow($exception->getMessage());
             }
 
-            $this->addOption( 'null',  "not selected");
+            $this->addOption('null', "not selected");
             if ($deliveryMethods) {
                 foreach ($deliveryMethods as $code => $delivery) {
                     $this->addOption($delivery->getCarrierCode(), $delivery->getConfigData('title'));
                 }
             }
-
         }
 
         return parent::_toHtml();

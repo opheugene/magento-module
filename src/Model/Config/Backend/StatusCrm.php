@@ -49,7 +49,7 @@ class StatusCrm extends \Magento\Framework\View\Element\Html\Select
     public function _toHtml()
     {
         if (!$this->getOptions()) {
-            $statuses = array();
+            $statuses = [];
 
             try {
                 $response = $this->client->statusesList();
@@ -61,13 +61,12 @@ class StatusCrm extends \Magento\Framework\View\Element\Html\Select
                 $statuses = $response['statuses'];
             }
 
-            $this->addOption( 'null',  "not selected");
+            $this->addOption('null', "not selected");
             if ($statuses) {
                 foreach ($statuses as $status) {
                     $this->addOption($status['code'], $status['name']);
                 }
             }
-
         }
 
         return parent::_toHtml();

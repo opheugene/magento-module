@@ -49,7 +49,7 @@ class ShippingCrm extends \Magento\Framework\View\Element\Html\Select
     public function _toHtml()
     {
         if (!$this->getOptions()) {
-            $deliveryTypes = array();
+            $deliveryTypes = [];
 
             try {
                 $response = $this->client->deliveryTypesList();
@@ -61,7 +61,7 @@ class ShippingCrm extends \Magento\Framework\View\Element\Html\Select
                 $deliveryTypes = $response['deliveryTypes'];
             }
 
-            $this->addOption( 'null',  "not selected");
+            $this->addOption('null', "not selected");
             if ($deliveryTypes) {
                 foreach ($deliveryTypes as $deliveryType) {
                     $this->addOption($deliveryType['code'], $deliveryType['name']);

@@ -37,7 +37,6 @@ if (!class_exists('\PHPUnit\Framework\TestCase')) {
         }
     }
 } else {
-
     abstract class TestCase extends \PHPUnit\Framework\TestCase
     {
         public function createMock($originalClassName)
@@ -54,5 +53,3 @@ if (!class_exists('\PHPUnit\Framework\TestCase')) {
         }
     }
 }
-
-

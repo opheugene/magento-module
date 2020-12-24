@@ -52,7 +52,7 @@ EOT;
      */
     public function buildScript()
     {
-        $params = array();
+        $params = [];
 
         if ($this->customer->getId()) {
             $params['customerId'] = $this->customer->getId();

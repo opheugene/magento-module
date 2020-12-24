@@ -84,43 +84,43 @@ class InventoriesUploadTest extends TestCase
 
     private function getResponseData()
     {
-        return array(
+        return [
             'true' => $this->getApiInventories(),
             'false' => false
-        );
+        ];
     }
 
     public function dataProviderLoadStocks()
     {
         $response = $this->getResponseData();
 
-        return array(
-            array(
+        return [
+            [
                 'response' => $response['true']
-            ),
-            array(
+            ],
+            [
                 'response' => $response['false']
-            )
-        );
+            ]
+        ];
     }
 
     private function getApiInventories()
     {
-        return array(
+        return [
             'success' => true,
-            'pagination' => array(
+            'pagination' => [
                 'limit' => 250,
                 'totalCount' => 1,
                 'currentPage' => 1,
                 'totalPageCount' => 1
-            ),
-            'offers' => array(
-                array(
+            ],
+            'offers' => [
+                [
                     'externalId' => 1,
                     'xmlId' => 'xmlId',
                     'quantity' => 10
-                )
-            )
-        );
+                ]
+            ]
+        ];
     }
 }
