@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
- 
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Retailcrm\Retailcrm\Helper\Proxy">
         <arguments>
@@ -15,6 +15,18 @@
                 <item name="customers_export_command" xsi:type="object">Retailcrm\Retailcrm\Console\Command\CustomersExport</item>
                 <item name="icml_generate_command" xsi:type="object">Retailcrm\Retailcrm\Console\Command\IcmlGenerate</item>
             </argument>
+        </arguments>
+    </type>
+
+    <type name="Retailcrm\Retailcrm\Block\Adminhtml\System\Config\Form\Fieldset\Sites">
+        <arguments>
+            <argument name="context" xsi:type="object">Magento\Backend\Block\Context</argument>
+            <argument name="authSession" xsi:type="object">Magento\Backend\Model\Auth\Session</argument>
+            <argument name="jsHelper" xsi:type="object">Magento\Framework\View\Helper\Js</argument>
+            <argument name="storeManager" xsi:type="object">Magento\Store\Model\StoreManagerInterface</argument>
+            <argument name="client" xsi:type="object">Retailcrm\Retailcrm\Helper\Proxy</argument>
+            <argument name="objectFactory" xsi:type="object">Magento\Framework\DataObjectFactory</argument>
+            <argument name="data" xsi:type="array"></argument>
         </arguments>
     </type>
 </config>

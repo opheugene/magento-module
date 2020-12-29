@@ -3,6 +3,7 @@
 namespace Retailcrm\Retailcrm\Block\Adminhtml\System\Config\Form\Fieldset;
 
 use Magento\Framework\Data\Form\Element\AbstractElement;
+use Retailcrm\Retailcrm\Helper;
 
 class Sites extends \Magento\Config\Block\System\Config\Form\Fieldset
 {
@@ -29,7 +30,7 @@ class Sites extends \Magento\Config\Block\System\Config\Form\Fieldset
         \Magento\Backend\Model\Auth\Session $authSession,
         \Magento\Framework\View\Helper\Js $jsHelper,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
-        \Retailcrm\Retailcrm\Helper\Proxy $client,
+        Helper\Proxy $client,
         \Magento\Framework\DataObjectFactory $objectFactory,
         array $data = []
     ) {
