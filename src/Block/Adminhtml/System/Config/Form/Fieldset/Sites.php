@@ -29,7 +29,7 @@ class Sites extends \Magento\Config\Block\System\Config\Form\Fieldset
         \Magento\Backend\Model\Auth\Session $authSession,
         \Magento\Framework\View\Helper\Js $jsHelper,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
-        \Retailcrm\Retailcrm\Helper\Proxy\Proxy $client,
+        \Retailcrm\Retailcrm\Helper\Proxy $client,
         \Magento\Framework\DataObjectFactory $objectFactory,
         array $data = []
     ) {
