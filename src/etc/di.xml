@@ -17,16 +17,4 @@
             </argument>
         </arguments>
     </type>
-
-    <type name="Retailcrm\Retailcrm\Block\Adminhtml\System\Config\Form\Fieldset\Sites">
-        <arguments>
-            <argument name="context" xsi:type="object">Magento\Backend\Block\Context</argument>
-            <argument name="authSession" xsi:type="object">Magento\Backend\Model\Auth\Session</argument>
-            <argument name="jsHelper" xsi:type="object">Magento\Framework\View\Helper\Js</argument>
-            <argument name="storeManager" xsi:type="object">Magento\Store\Model\StoreManagerInterface</argument>
-            <argument name="client" xsi:type="object">Retailcrm\Retailcrm\Helper\Proxy</argument>
-            <argument name="objectFactory" xsi:type="object">Magento\Framework\DataObjectFactory</argument>
-            <argument name="data" xsi:type="array"></argument>
-        </arguments>
-    </type>
 </config>
